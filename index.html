@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f0e6">
+<meta name="description" content="نمونه‌کار: فروشگاه زیورآلات دست‌ساز گِرِه (برند خیالی)">
+<title>گِرِه | زیورآلات دست‌ساز</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23c2714f'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23f7f0e6' stroke-width='2.5' stroke-dasharray='3 2.3'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="_fonts/fonts.css">
+<style>
+:root{
+  --cream:#f7f0e6; --cream2:#efe4d4; --paper:#fffaf3; --ink:#3a2a22; --mute:#857264; --line:#e3d4c1;
+  --terra:#c2714f; --terra2:#a85a3b; --olive:#6b7a4b; --blush:#e9c8bb; --sand:#d9b98f;
+  --fa:"Vazirmatn",Tahoma,sans-serif; --lat:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--fa);line-height:1.9;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input{font:inherit}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.it{font-family:var(--lat);font-style:italic;font-weight:400}
+.demo{background:var(--olive);color:#f3efe2;text-align:center;font-size:12.5px;padding:5px 12px}
+/* grain */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .45 0 0 0 0 .35 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+header{position:sticky;top:0;z-index:40;background:rgba(247,240,230,.86);backdrop-filter:blur(10px)}
+.nav{display:flex;justify-content:space-between;align-items:center;height:76px}
+.logo{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:800;color:var(--terra2)}
+.logo svg{width:34px}
+.menu{display:flex;gap:26px;font-size:15px}
+.menu a{padding:4px 2px;border-radius:99px;transition:.3s}
+.menu a:hover{color:var(--terra)}
+.bag{display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--cream);padding:9px 18px;border-radius:99px;font-size:14px}
+.bag b{background:var(--terra);border-radius:99px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px}
+@media(max-width:820px){.menu{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:50px 0 90px;position:relative}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.hand{font-family:var(--lat);font-style:italic;color:var(--terra);font-size:20px}
+.hero h1{font-size:clamp(40px,5.8vw,82px);line-height:1.25;font-weight:800;margin:8px 0 20px}
+.hero h1 .u{position:relative;white-space:nowrap;color:var(--terra2)}
+.hero h1 .u svg{position:absolute;right:0;bottom:-6px;width:100%;height:18px}
+.hero h1 .u path{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.6s .6s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero p{color:var(--mute);font-size:17px;max-width:460px}
+.btns{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:99px;font-weight:600;font-size:15px;transition:.3s}
+.btn.t{background:var(--terra);color:#fff}
+.btn.t:hover{background:var(--terra2);transform:translateY(-2px) rotate(-1deg)}
+.btn.o{border:1.5px solid var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--cream)}
+.maker{display:flex;align-items:center;gap:12px;margin-top:34px;font-size:14px;color:var(--mute)}
+.maker .av{width:46px;height:46px;border-radius:50%;background:var(--blush);display:grid;place-items:center}
+.collage{position:relative;aspect-ratio:1/1.02}
+.blob{position:absolute;display:grid;place-items:center;box-shadow:0 30px 50px -30px rgba(90,50,30,.45);overflow:hidden}
+.blob svg{width:78%}
+.b1{inset:4% 8% 26% 22%;background:var(--blush);border-radius:58% 42% 50% 50%/50% 55% 45% 50%;animation:morph 14s ease-in-out infinite}
+.b2{width:44%;aspect-ratio:1;left:0;bottom:4%;background:var(--olive);border-radius:50%}
+.b3{width:36%;aspect-ratio:1/1.25;right:0;bottom:0;background:var(--sand);border-radius:200px 200px 24px 24px}
+@keyframes morph{50%{border-radius:42% 58% 45% 55%/55% 45% 55% 45%}}
+.sticker{position:absolute;top:2%;left:6%;width:120px;height:120px;animation:spin 18s linear infinite;z-index:3}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float{animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px) rotate(3deg)}}
+
+/* strip */
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+@media(max-width:860px){.values{grid-template-columns:1fr 1fr}}
+.val{background:var(--paper);border-radius:22px;padding:20px;display:flex;gap:14px;align-items:center;font-size:14px}
+.val i{font-style:normal;font-size:26px}
+.val b{display:block;font-size:15px}
+.val span{color:var(--mute)}
+
+section{padding:100px 0}
+.sh{text-align:center;max-width:640px;margin:0 auto 46px}
+.sh h2{font-size:clamp(30px,4vw,52px);font-weight:800;line-height:1.3}
+.sh h2 em{font-style:normal;color:var(--terra)}
+.sh p{color:var(--mute);margin-top:10px}
+
+/* builder */
+.builder{background:var(--paper);border-radius:40px;padding:clamp(22px,4vw,54px);display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;box-shadow:0 40px 80px -60px rgba(90,50,30,.5)}
+@media(max-width:900px){.builder{grid-template-columns:1fr}}
+.preview{position:relative;aspect-ratio:1;background:radial-gradient(circle at 50% 45%,#fff,var(--cream2));border-radius:50%;display:grid;place-items:center}
+.preview svg{width:88%;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.preview .lbl{position:absolute;bottom:8%;background:var(--ink);color:var(--cream);font-size:12.5px;padding:4px 14px;border-radius:99px}
+.ctrl h3{font-size:24px;font-weight:800;margin-bottom:4px}
+.ctrl .step{margin-top:24px}
+.ctrl .step > b{display:flex;justify-content:space-between;font-size:14.5px;margin-bottom:10px}
+.ctrl .step > b span{color:var(--mute);font-weight:400}
+.beads{display:flex;gap:10px;flex-wrap:wrap}
+.bead{width:42px;height:42px;border-radius:50%;border:3px solid var(--paper);outline:1.5px solid var(--line);transition:.25s;position:relative}
+.bead:hover{transform:translateY(-3px)}
+.bead.on{outline:2.5px solid var(--ink)}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.op{padding:8px 16px;border-radius:99px;border:1.5px solid var(--line);font-size:14px;transition:.25s}
+.op.on{border-color:var(--ink);background:var(--ink);color:var(--cream)}
+.name{width:100%;border:1.5px solid var(--line);background:var(--cream);border-radius:16px;padding:12px 16px;font-size:16px;outline:0;direction:ltr;text-align:center;letter-spacing:.3em;text-transform:uppercase;font-family:var(--lat)}
+.name:focus{border-color:var(--terra)}
+.sum{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:20px;border-top:1.5px dashed var(--line);gap:14px;flex-wrap:wrap}
+.sum b{font-size:22px}
+
+/* shop masonry */
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:34px;flex-wrap:wrap}
+.tab{padding:8px 20px;border-radius:99px;background:var(--paper);font-size:14.5px;transition:.25s}
+.tab.on{background:var(--terra);color:#fff}
+.mason{columns:4 250px;column-gap:18px}
+.it-card{break-inside:avoid;margin-bottom:18px;background:var(--paper);border-radius:28px;overflow:hidden;position:relative;transition:.4s;cursor:pointer}
+.it-card:hover{transform:translateY(-5px) rotate(-.6deg);box-shadow:0 26px 40px -28px rgba(90,50,30,.55)}
+.it-card .pic{display:grid;place-items:center;padding:24px;position:relative;overflow:hidden}
+.it-card .pic.ph{padding:0;background:var(--cream2)}
+.it-card .pic.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.it-card .pic.ph img.b{opacity:0}
+@media(hover:hover){.it-card:hover .pic.ph img.b{opacity:1}.it-card:hover .pic.ph img{transform:scale(1.04)}}
+.it-card.alt .pic.ph img.b{opacity:1}
+.swap{position:absolute;bottom:12px;right:12px;font-size:11.5px;background:rgba(255,250,243,.88);padding:2px 10px;border-radius:99px;pointer-events:none;transition:.3s}
+@media(hover:hover){.it-card:hover .swap{opacity:0}}
+.it-card.alt .swap{opacity:0}
+.add{width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--cream);font-size:18px;line-height:1;flex:none;transition:.25s}
+.add:hover{background:var(--terra)}
+.blob img{width:100%;height:100%;object-fit:cover}
+.it-card .pic svg{width:80%;transition:.6s}
+.it-card:hover .pic svg{transform:scale(1.07) rotate(4deg)}
+.it-card .m{padding:0 20px 20px;display:flex;justify-content:space-between;align-items:end;gap:10px}
+.it-card h4{font-size:16px}
+.it-card small{color:var(--mute);font-size:13px}
+.it-card .p{font-weight:700;color:var(--terra2);font-size:14.5px;white-space:nowrap}
+.heart{position:absolute;top:14px;left:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,250,243,.85);display:grid;place-items:center;transition:.3s}
+.heart svg{width:18px}
+.heart.on{background:var(--terra);color:#fff}
+.heart.on svg{fill:#fff}
+.left{position:absolute;top:14px;right:14px;font-size:12px;background:var(--ink);color:var(--cream);padding:2px 10px;border-radius:99px}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+@media(max-width:900px){.proc{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.proc{grid-template-columns:1fr}}
+.ps{position:relative;padding-top:20px}
+.ps .ill{aspect-ratio:1;border-radius:50% 50% 30px 30px;display:grid;place-items:center;margin-bottom:16px}
+.ps .ill svg{width:56%}
+.ps h4{font-size:18px;font-weight:800}
+.ps h4:before{counter-increment:s;content:"۰" counter(s,persian);color:var(--terra);font-family:var(--lat);margin-left:8px}
+.ps p{color:var(--mute);font-size:14.5px}
+
+/* reviews */
+.rev{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.rc{flex:0 0 min(360px,85%);scroll-snap-align:start;background:var(--paper);border-radius:28px;padding:26px;position:relative}
+.rc:nth-child(odd){transform:rotate(-1deg)}
+.rc:nth-child(even){transform:rotate(1deg);background:var(--blush)}
+.rc .st{color:var(--terra);letter-spacing:3px}
+.rc p{margin:10px 0 16px}
+.rc b{font-size:14px}
+.rc small{color:var(--mute)}
+
+/* gift */
+.gift{background:var(--terra);color:#fff;border-radius:40px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;overflow:hidden;position:relative}
+@media(max-width:860px){.gift{grid-template-columns:1fr}}
+.gift h2{font-size:clamp(30px,3.6vw,48px);font-weight:800;line-height:1.3}
+.gift p{opacity:.9;margin:12px 0 22px}
+.gift .btn{background:var(--cream);color:var(--ink)}
+.gift svg{width:min(340px,100%);margin-inline:auto;display:block}
+
+footer{padding:70px 0 30px;font-size:14px;color:var(--mute)}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:30px}
+@media(max-width:760px){.fg{grid-template-columns:1fr}}
+footer h5{color:var(--ink);font-size:15px;margin-bottom:6px}
+.ig{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--paper);padding:8px 16px;border-radius:99px;color:var(--ink)}
+
+/* product modal + cart drawer */
+.pm{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:16px;background:rgba(58,42,34,.5);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:.35s}
+.pm.on{opacity:1;pointer-events:auto}
+.pbox{background:var(--paper);border-radius:32px;width:min(960px,100%);max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;transform:translateY(24px) scale(.98);transition:.45s cubic-bezier(.2,.7,.2,1);position:relative}
+.pm.on .pbox{transform:none}
+.pgal{position:relative;background:var(--cream2)}
+.pgal #pmain{width:100%;height:100%;min-height:480px;object-fit:cover;display:block;cursor:pointer}
+.thumbs{position:absolute;bottom:14px;right:14px;display:flex;gap:8px}
+.thumbs button{width:58px;height:72px;border-radius:12px;overflow:hidden;border:2px solid transparent;opacity:.75;transition:.25s}
+.thumbs button.on{border-color:var(--paper);opacity:1;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.pbody{padding:30px 30px 26px;display:flex;flex-direction:column;gap:13px}
+.pclose{position:absolute;top:14px;left:14px;z-index:2;width:40px;height:40px;border-radius:50%;background:var(--paper);font-size:22px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.pbody h3{font-size:26px;font-weight:800;line-height:1.4}
+.pbody .pp{font-size:20px;font-weight:800;color:var(--terra2)}
+.pbody .ds{color:var(--mute);font-size:14.5px}
+.spec{width:100%;border-collapse:collapse;font-size:13.5px}
+.spec td{padding:7px 0;border-bottom:1px dashed var(--line);vertical-align:top}
+.spec td:first-child{color:var(--mute);width:100px;white-space:nowrap}
+.lbl{font-size:14px;font-weight:700}
+.opts2{display:flex;flex-wrap:wrap;gap:8px}
+.o2{padding:9px 16px;border-radius:99px;border:1.5px solid var(--line);font-size:14px;transition:.2s}
+.o2:hover{border-color:var(--ink)}
+.o2.on{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.o2 small{opacity:.7}
+.o2.err{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.fit{font-size:12.5px;color:var(--mute)}
+.giftc{display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer}
+.giftc input{accent-color:var(--terra);width:17px;height:17px}
+.giftc small{color:var(--mute)}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:99px;overflow:hidden}
+.qty button{width:38px;height:38px;font-size:18px}
+.qty b{min-width:30px;text-align:center}
+.qty.sm button{width:28px;height:28px;font-size:15px}
+.qty.sm b{min-width:22px;font-size:13px}
+.pact{display:flex;gap:12px;align-items:center}
+.pact .btn{flex:1;justify-content:center}
+.perks{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--mute)}
+@media(max-width:760px){.pm{place-items:end center;padding:0}.pbox{grid-template-columns:1fr;border-radius:28px 28px 0 0;max-height:94vh}.pgal #pmain{aspect-ratio:1/1;height:auto;min-height:0}}
+.it-card h4{cursor:pointer}
+.it-card h4:hover{color:var(--terra)}
+.ov{position:fixed;inset:0;background:rgba(58,42,34,.45);z-index:70;opacity:0;pointer-events:none;transition:.35s}
+.ov.on{opacity:1;pointer-events:auto}
+.cart{position:fixed;top:0;bottom:0;left:0;width:min(420px,100%);background:var(--paper);z-index:80;transform:translateX(-102%);transition:.5s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+.cart.on{transform:none}
+.chead{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--line)}
+.citems{flex:1;overflow-y:auto;padding:10px 24px}
+.ci{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)}
+.ci .th{width:64px;height:64px;border-radius:14px;overflow:hidden;background:var(--cream2);display:grid;place-items:center}
+.ci .th img{width:100%;height:100%;object-fit:cover}
+.ci .th svg{width:90%}
+.ci .meta2{font-size:12.5px;color:var(--mute)}
+.ci .rm{color:var(--mute);font-size:12.5px}
+.cfoot{padding:20px 24px;border-top:1px solid var(--line)}
+.ship{height:6px;background:var(--cream2);border-radius:6px;overflow:hidden;margin:8px 0 16px}
+.ship i{display:block;height:100%;background:var(--terra);transition:.5s}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--ink);color:var(--cream);padding:12px 24px;border-radius:99px;z-index:99;transition:.4s;font-size:14px}
+.toast.on{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(26px);transition:.9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">نمونه‌کار طراحی سایت — «گِرِه» یک برند خیالی است</div>
+<header><div class="wrap nav">
+  <a href="#" class="logo"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" fill="none" stroke="#c2714f" stroke-width="3" stroke-dasharray="5 3.4"/><circle cx="20" cy="5" r="4" fill="#6b7a4b"/></svg>گِرِه</a>
+  <nav class="menu"><a href="#build">دستبندت را بساز</a><a href="#shop">فروشگاه</a><a href="#process">چطور ساخته می‌شود</a><a href="#gift">کادو</a></nav>
+  <button class="bag" id="bagBtn">سبد <b id="bagN">۰</b></button>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div class="rv">
+    <div class="hand">handmade with love, in Isfahan</div>
+    <h1>هر مهره،<br>یک <span class="u">گِرِه<svg viewBox="0 0 200 18" preserveAspectRatio="none"><path d="M4 12 Q50 2 100 10 T196 8" stroke="#c2714f" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span> با دست.</h1>
+    <p>دستبند، گوشواره و گردنبندهایی که با مهره‌های سنگی، سرامیک لعاب‌دار و نخ کتان در یک کارگاه کوچک در اصفهان ساخته می‌شوند. هیچ دو تایی مثل هم نیستند.</p>
+    <div class="btns"><a href="#build" class="btn t">دستبند خودت را بساز ✦</a><a href="#shop" class="btn o">دیدن کارها</a></div>
+    <div class="maker"><div class="av"><svg viewBox="0 0 40 40" width="30"><circle cx="20" cy="15" r="7" fill="#a85a3b"/><path d="M6 36 Q20 20 34 36" fill="#a85a3b"/></svg></div><div><b style="color:var(--ink)">مریم، سازنده‌ی گِرِه</b><br>«هر سفارش را خودم می‌بندم و با یک یادداشت دست‌نویس می‌فرستم.»</div></div>
+  </div>
+  <div class="collage rv">
+    <svg class="sticker" viewBox="0 0 120 120"><defs><path id="cp" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="58" fill="#3a2a22"/><text font-family="Fraunces" font-style="italic" font-size="13.5" fill="#f7f0e6" letter-spacing="2.4"><textPath href="#cp">one of a kind · made by hand · </textPath></text><text x="60" y="68" text-anchor="middle" font-size="24" fill="#d9b98f">✦</text></svg>
+    <div class="blob b1"><div id="heroBracelet" style="width:100%;height:100%"></div></div>
+    <div class="blob b2" id="heroEar"></div>
+    <div class="blob b3" id="heroNeck"></div>
+  </div>
+</div>
+
+<div class="wrap values">
+  <div class="val rv"><i>🧵</i><div><b>۱۰۰٪ دست‌ساز</b><span>بدون دستگاه، بدون عجله</span></div></div>
+  <div class="val rv"><i>🪨</i><div><b>سنگ طبیعی</b><span>عقیق، فیروزه، چشم‌ببر</span></div></div>
+  <div class="val rv"><i>🎁</i><div><b>بسته‌بندی کادویی</b><span>رایگان، همراه کارت دست‌نویس</span></div></div>
+  <div class="val rv"><i>📦</i><div><b>ارسال ۳ تا ۵ روزه</b><span>به سراسر ایران</span></div></div>
+</div>
+
+<section id="build"><div class="wrap">
+  <div class="sh rv"><div class="hand">make it yours</div><h2>دستبند <em>خودت</em> را بساز</h2><p>رنگ مهره‌ها، نخ و حروف اسم را انتخاب کن؛ همین‌جا نتیجه را می‌بینی و ما دقیقاً همان را برایت می‌بافیم.</p></div>
+  <div class="builder rv">
+    <div class="preview"><div id="bPrev" style="width:100%;display:grid;place-items:center"></div><span class="lbl" id="bLbl"></span></div>
+    <div class="ctrl">
+      <h3>دستبند سفارشی</h3><p style="color:var(--mute);font-size:14.5px">پایه از ۶۸۰ هزار تومان · آماده‌ی ارسال در ۴ روز</p>
+      <div class="step"><b>۱. مهره‌ی اصلی <span id="b1n"></span></b><div class="beads" id="bA"></div></div>
+      <div class="step"><b>۲. مهره‌ی دوم <span id="b2n"></span></b><div class="beads" id="bB"></div></div>
+      <div class="step"><b>۳. چیدمان</b><div class="opts" id="pat"></div></div>
+      <div class="step"><b>۴. حروف اسم <span>تا ۶ حرف لاتین · هر حرف ۴۰ هزار تومان</span></b><input class="name" id="nm" maxlength="6" placeholder="NAME" autocomplete="off"></div>
+      <div class="step"><b>۵. سایز مچ</b><div class="opts" id="sz"></div></div>
+      <div class="sum"><div><small style="color:var(--mute)">قیمت نهایی</small><br><b id="bPrice"></b></div><button class="btn t" id="bAdd">افزودن به سبد</button></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="shop" style="padding-top:20px"><div class="wrap">
+  <div class="sh rv"><div class="hand">the collection</div><h2>تازه از <em>کارگاه</em></h2><p>از هر طرح فقط چند عدد ساخته می‌شود. وقتی تمام شود، تمام شده.</p></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="mason" id="mason"></div>
+</div></section>
+
+<section id="process" style="background:var(--paper)"><div class="wrap">
+  <div class="sh rv"><div class="hand">behind the scenes</div><h2>از مهره تا <em>مچ شما</em></h2></div>
+  <div class="proc">
+    <div class="ps rv"><div class="ill" style="background:var(--blush)"><svg viewBox="0 0 100 100"><circle cx="30" cy="40" r="12" fill="#c2714f"/><circle cx="58" cy="32" r="9" fill="#6b7a4b"/><circle cx="70" cy="60" r="13" fill="#d9b98f"/><circle cx="40" cy="70" r="10" fill="#3f7a8a"/></svg></div><h4>انتخاب سنگ</h4><p>مهره‌ها را یکی‌یکی از بازار اصفهان و تبریز انتخاب می‌کنیم.</p></div>
+    <div class="ps rv"><div class="ill" style="background:#dfe3cf"><svg viewBox="0 0 100 100"><path d="M10 80 Q50 10 90 80" stroke="#3a2a22" stroke-width="3" fill="none" stroke-dasharray="4 4"/><circle cx="50" cy="45" r="9" fill="#c2714f"/><path d="M80 20 L60 40" stroke="#857264" stroke-width="4" stroke-linecap="round"/></svg></div><h4>بافت با دست</h4><p>نخ کتان مومی را گره به گره می‌بافیم؛ هر دستبند حدود دو ساعت.</p></div>
+    <div class="ps rv"><div class="ill" style="background:#f3dfc4"><svg viewBox="0 0 100 100"><rect x="22" y="40" width="56" height="40" rx="4" fill="#c2714f"/><rect x="18" y="32" width="64" height="12" rx="3" fill="#a85a3b"/><path d="M50 32 V80" stroke="#f7f0e6" stroke-width="5"/><path d="M50 32 Q36 14 30 28 Q40 34 50 32 Q64 14 70 28 Q60 34 50 32" fill="#6b7a4b"/></svg></div><h4>بسته‌بندی کادویی</h4><p>در جعبه‌ی کرافت با کارت دست‌نویس و کیسه‌ی پارچه‌ای.</p></div>
+    <div class="ps rv"><div class="ill" style="background:#e6d4cc"><svg viewBox="0 0 100 100"><path d="M20 70 Q50 40 80 70" stroke="#3a2a22" stroke-width="16" fill="none" stroke-linecap="round" opacity=".15"/><circle cx="50" cy="56" r="26" fill="none" stroke="#c2714f" stroke-width="6" stroke-dasharray="7 4"/><text x="50" y="62" text-anchor="middle" font-size="18">♥</text></svg></div><h4>رسیدن به شما</h4><p>با پست پیشتاز، همراه کد رهگیری و راهنمای نگهداری.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sh rv"><div class="hand">kind words</div><h2>شما <em>گفتید</em></h2></div>
+  <div class="rev rv">
+    <div class="rc"><div class="st">★★★★★</div><p>دستبند اسم دخترم را سفارش دادم؛ از عکس سایت هم قشنگ‌تر بود. یادداشت دست‌نویس داخل جعبه اشکم را درآورد.</p><b>نگار</b> <small>· تهران</small></div>
+    <div class="rc"><div class="st">★★★★★</div><p>گوشواره‌های فیروزه را برای تولد خواهرم گرفتم؛ بسته‌بندی‌اش آن‌قدر قشنگ بود که دلش نمی‌آمد بازش کند.</p><b>سارا</b> <small>· شیراز</small></div>
+    <div class="rc"><div class="st">★★★★★</div><p>سه ماه است هر روز دستم است و هنوز نخش مثل روز اول است. کیفیت واقعاً خوب است.</p><b>علی</b> <small>· رشت</small></div>
+    <div class="rc"><div class="st">★★★★☆</div><p>ارسال یک روز دیرتر رسید ولی خود دستبند عالی بود. حتماً دوباره سفارش می‌دهم.</p><b>مهسا</b> <small>· مشهد</small></div>
+  </div>
+</div></section>
+
+<section id="gift" style="padding-top:0"><div class="wrap">
+  <div class="gift rv">
+    <div><div class="hand" style="color:#fbe3d6">a little gift</div><h2>دنبال کادوی<br>خاص هستید؟</h2><p>کارت هدیه‌ی گِرِه را بفرستید تا خودش دستبندش را بسازد. یا یکی از ست‌های آماده را با بسته‌بندی ویژه انتخاب کنید.</p><button class="btn" onclick="addLine({key:'gift',title:'کارت هدیه‌ی گِرِه',sub:'مبلغ ۱ میلیون تومان',price:1000000,q:1,thumb:'<span style=&quot;font-size:28px&quot;>🎁</span>'});openCart()">خرید کارت هدیه</button></div>
+    <svg viewBox="0 0 300 260"><rect x="50" y="100" width="200" height="140" rx="10" fill="#f7f0e6"/><rect x="38" y="76" width="224" height="40" rx="8" fill="#efe4d4"/><rect x="138" y="76" width="24" height="164" fill="#6b7a4b"/><path d="M150 76 Q110 20 92 50 Q100 76 150 76 Q190 20 208 50 Q200 76 150 76" fill="#6b7a4b"/><circle cx="150" cy="74" r="10" fill="#556239"/><g class="float"><rect x="190" y="150" width="70" height="46" rx="6" fill="#3a2a22" transform="rotate(-10 225 173)"/><text x="225" y="178" text-anchor="middle" fill="#d9b98f" font-family="Fraunces" font-style="italic" font-size="14" transform="rotate(-10 225 173)">for you</text></g></svg>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fg">
+    <div><a href="#" class="logo">گِرِه</a><p style="margin-top:8px">کارگاه زیورآلات دست‌ساز · اصفهان، محله‌ی جلفا.<br>این سایت یک نمونه‌کار طراحی است.</p><a href="#" class="ig">◎ gereh.handmade@</a></div>
+    <div><h5>فروشگاه</h5><p>دستبند<br>گوشواره<br>گردنبند<br>کارت هدیه</p></div>
+    <div><h5>کمک</h5><p>راهنمای سایز مچ<br>نگهداری از نخ و سنگ<br>پیگیری سفارش</p></div>
+  </div>
+</div></footer>
+<div class="ov" id="ov"></div>
+<aside class="cart" id="cart" aria-label="سبد خرید">
+  <div class="chead"><b style="font-size:18px">سبد خرید</b><button id="cclose" style="font-size:24px" aria-label="بستن">×</button></div>
+  <div class="citems" id="citems"></div>
+  <div class="cfoot"><div id="shipTxt" style="font-size:13.5px"></div><div class="ship"><i id="shipBar"></i></div>
+    <div style="display:flex;justify-content:space-between;margin-bottom:14px"><span>جمع کل</span><b id="ctotal"></b></div>
+    <button class="btn t" style="width:100%;justify-content:center" onclick="toast('این یک نمونه‌کار است؛ پرداخت فعال نیست')">ثبت سفارش و پرداخت</button></div>
+</aside>
+<div class="pm" id="pm" role="dialog" aria-modal="true" aria-label="جزئیات محصول"><div class="pbox" id="pbox"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const fa = n => String(n).replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+const money = n => fa(n.toLocaleString("en-US").replace(/,/g,"٬")) + " تومان";
+const shade = (hex, k) => { const n = parseInt(hex.slice(1),16); let r=n>>16,g=n>>8&255,b=n&255; const f = v => Math.max(0,Math.min(255,Math.round(k<0? v*(1+k) : v+(255-v)*k))); return "#"+[f(r),f(g),f(b)].map(v=>v.toString(16).padStart(2,"0")).join(""); };
+let gid = 0;
+
+const BEADS = [
+  {n:"عقیق سرخ",c:"#b5452e"},{n:"فیروزه",c:"#3fa3a0"},{n:"یشم سبز",c:"#6b8a4b"},{n:"چشم‌ببر",c:"#a8742f"},
+  {n:"سرامیک کرم",c:"#e8dcc6"},{n:"لاجورد",c:"#2f4c8f"},{n:"صدف صورتی",c:"#e7b3a6"},{n:"اونیکس",c:"#2a2522"}
+];
+
+/* bead defs: radial gradient per colour */
+function beadDef(id, c){ return `<radialGradient id="${id}" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="${shade(c,.55)}"/><stop offset=".45" stop-color="${c}"/><stop offset="1" stop-color="${shade(c,-.35)}"/></radialGradient>`; }
+
+/* Bracelet: circle of beads, optional letter cubes */
+function bracelet(o){
+  const id = "g" + (gid++), N = o.n || 22, R = 120, letters = (o.name||"").toUpperCase().replace(/[^A-Z]/g,"").slice(0,6);
+  const seq = [];
+  for(let i=0;i<N;i++){
+    let c = o.a;
+    if(o.pat==="alt") c = i%2 ? o.b : o.a;
+    else if(o.pat==="spaced") c = i%4===0 ? o.b : o.a;
+    else if(o.pat==="grad") c = i < N/2 ? o.a : o.b;
+    seq.push(c);
+  }
+  const L = letters.length, start = Math.round(N*0.75 - L/2);
+  const cols = [...new Set(seq)];
+  let out = `<svg viewBox="0 0 320 320" role="img" aria-label="پیش‌نمایش دستبند"><defs>${cols.map((c,k)=>beadDef(id+"c"+k,c)).join("")}
+    <linearGradient id="${id}cube" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#e5d8c2"/></linearGradient></defs>
+    <circle cx="160" cy="166" r="${R}" fill="none" stroke="#3a2a22" stroke-opacity=".08" stroke-width="26"/>
+    <circle cx="160" cy="160" r="${R}" fill="none" stroke="${o.cord||'#8a6a4a'}" stroke-width="2"/>`;
+  for(let i=0;i<N;i++){
+    const a = i/N*Math.PI*2 - Math.PI/2, x = 160 + R*Math.cos(a), y = 160 + R*Math.sin(a);
+    const li = i - start;
+    if(L && li >= 0 && li < L){
+      out += `<g transform="rotate(${a*180/Math.PI+90} ${x} ${y})"><rect x="${x-11}" y="${y-11}" width="22" height="22" rx="3" fill="url(#${id}cube)" stroke="#cbb89a"/><text x="${x}" y="${y+5.5}" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="14" fill="#3a2a22">${letters[li]}</text></g>`;
+    } else {
+      const r = o.pat==="spaced" && seq[i]===o.b ? 13 : 15.5;
+      out += `<circle cx="${x}" cy="${y}" r="${r}" fill="url(#${id}c${cols.indexOf(seq[i])})"/>`;
+    }
+  }
+  out += `<g transform="translate(160 ${160+R+18})"><path d="M-12 -10 Q0 0 12 -10 M-10 -6 L-14 14 M10 -6 L14 16" stroke="${o.cord||'#8a6a4a'}" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="-14" cy="16" r="4" fill="url(#${id}c0)"/><circle cx="14" cy="18" r="4" fill="url(#${id}c0)"/></g></svg>`;
+  return out;
+}
+function earrings(c, kind){
+  const id = "g" + (gid++);
+  const drop = kind==="hoop"
+    ? x => `<circle cx="${x}" cy="90" r="34" fill="none" stroke="#c9a35b" stroke-width="4"/>${[...Array(7)].map((_,i)=>{const a=(i/6)*Math.PI*.9+Math.PI*.05;return `<circle cx="${x+34*Math.cos(a)}" cy="${90+34*Math.sin(a)}" r="6" fill="url(#${id})"/>`}).join("")}`
+    : kind==="tassel"
+    ? x => `<circle cx="${x}" cy="56" r="10" fill="url(#${id})"/>${[...Array(9)].map((_,i)=>`<line x1="${x-8+i*2}" y1="66" x2="${x-14+i*3.5}" y2="${130+(i%3)*4}" stroke="${c}" stroke-width="2"/>`).join("")}<rect x="${x-9}" y="64" width="18" height="8" rx="2" fill="#c9a35b"/>`
+    : x => `<circle cx="${x}" cy="62" r="9" fill="url(#${id})"/><path d="M${x} 71 L${x} 82" stroke="#c9a35b" stroke-width="2"/><path d="M${x} 82 Q${x+22} 112 ${x} 138 Q${x-22} 112 ${x} 82Z" fill="url(#${id})"/>`;
+  return `<svg viewBox="0 0 200 160"><defs>${beadDef(id,c)}</defs>${[60,140].map(x=>`<path d="M${x} 20 Q${x+14} 30 ${x} 46 L${x} 52" stroke="#c9a35b" stroke-width="2.4" fill="none"/>${drop(x)}`).join("")}</svg>`;
+}
+function necklace(c, c2){
+  const id = "g" + (gid++);
+  return `<svg viewBox="0 0 200 200"><defs>${beadDef(id,c)}${beadDef(id+"b",c2)}</defs><path d="M30 10 Q30 140 100 150 Q170 140 170 10" stroke="#8a6a4a" stroke-width="1.6" fill="none"/>
+    ${[...Array(15)].map((_,i)=>{const t=i/14, x=(1-t)*(1-t)*30+2*(1-t)*t*100+t*t*170, y=(1-t)*(1-t)*40+2*(1-t)*t*200+t*t*40; return `<circle cx="${x}" cy="${y}" r="${i===7?0:5.5}" fill="url(#${id})"/>`}).join("")}
+    <path d="M100 124 L100 136" stroke="#c9a35b" stroke-width="2"/><path d="M100 134 L118 160 L100 190 L82 160Z" fill="url(#${id}b)" stroke="#c9a35b" stroke-width="2"/></svg>`;
+}
+
+/* hero */
+document.getElementById("heroBracelet").innerHTML = `<img src="img/g01.jpg" alt="دستبند عقیق دست‌ساز">`;
+document.getElementById("heroEar").innerHTML = `<img src="img/g04.jpg" alt="گوشواره فیروزه">`;
+document.getElementById("heroNeck").innerHTML = `<img src="img/g06.jpg" alt="گردنبند چشم‌ببر">`;
+
+/* builder */
+const B = {a:0, b:4, pat:"spaced", name:"", size:1};
+const PATS = [["spaced","فاصله‌دار"],["alt","یکی‌درمیان"],["grad","دو نیمه"],["solo","یک‌رنگ"]];
+const SIZES = [["S","۱۵ سانت",0],["M","۱۷ سانت",0],["L","۱۹ سانت",30000]];
+function beadsHTML(sel, key){ return BEADS.map((b,i)=>`<button class="bead ${i===sel?'on':''}" data-k="${key}" data-i="${i}" title="${b.n}" aria-label="${b.n}" style="background:radial-gradient(circle at 35% 30%,${shade(b.c,.5)},${b.c} 50%,${shade(b.c,-.35)})"></button>`).join(""); }
+function renderB(){
+  document.getElementById("bA").innerHTML = beadsHTML(B.a,"a");
+  document.getElementById("bB").innerHTML = beadsHTML(B.b,"b");
+  document.getElementById("b1n").textContent = BEADS[B.a].n;
+  document.getElementById("b2n").textContent = B.pat==="solo" ? "—" : BEADS[B.b].n;
+  document.getElementById("pat").innerHTML = PATS.map(p=>`<button class="op ${p[0]===B.pat?'on':''}" data-p="${p[0]}">${p[1]}</button>`).join("");
+  document.getElementById("sz").innerHTML = SIZES.map((s,i)=>`<button class="op ${i===B.size?'on':''}" data-s="${i}">${s[0]} · ${s[1]}</button>`).join("");
+  const n = [20,22,24][B.size];
+  document.getElementById("bPrev").innerHTML = bracelet({a:BEADS[B.a].c, b:BEADS[B.pat==="solo"?B.a:B.b].c, pat:B.pat==="solo"?"solo":B.pat, n, name:B.name});
+  document.getElementById("bLbl").textContent = `${fa(n)} مهره · ${B.name ? fa(B.name.length) + " حرف" : "بدون اسم"}`;
+  document.getElementById("bPrice").textContent = money(price());
+}
+const price = () => 680000 + B.name.length*40000 + SIZES[B.size][2] + (B.pat==="solo" ? 0 : 40000);
+document.querySelector(".ctrl").addEventListener("click", e => {
+  const bd = e.target.closest(".bead"); if(bd){ B[bd.dataset.k] = +bd.dataset.i; renderB(); return; }
+  const p = e.target.closest("[data-p]"); if(p){ B.pat = p.dataset.p; renderB(); return; }
+  const s = e.target.closest("[data-s]"); if(s){ B.size = +s.dataset.s; renderB(); }
+});
+const nm = document.getElementById("nm");
+nm.oninput = () => { nm.value = nm.value.toUpperCase().replace(/[^A-Z]/g,""); B.name = nm.value; renderB(); };
+document.getElementById("bAdd").onclick = () => {
+  const n = [20,22,24][B.size], b2 = B.pat==="solo" ? B.a : B.b;
+  const sub = [BEADS[B.a].n + (B.pat==="solo" ? "" : " + " + BEADS[b2].n), PATS.find(p => p[0]===B.pat)[1], B.name ? "اسم: " + B.name : "", "سایز " + SIZES[B.size][0]].filter(Boolean).join(" · ");
+  const thumb = bracelet({a:BEADS[B.a].c, b:BEADS[b2].c, pat:B.pat==="solo"?"solo":B.pat, n, name:B.name});
+  addLine({key:"c"+Date.now(), title:"دستبند سفارشی", sub, price:price(), q:1, thumb}, true);
+  toast("دستبند سفارشی شما به سبد اضافه شد ✦"); setTimeout(openCart, 700); const pv = document.querySelector("#bPrev svg"); pv.style.transform = "rotate(360deg) scale(.9)"; setTimeout(() => pv.style.transform = "", 650); };
+renderB();
+
+/* shop */
+const ITEMS = [
+  {n:"دستبند «انار»",t:"دستبند",p:740000,left:3,bg:"#f3d9cf",svg:()=>bracelet({a:"#b5452e",b:"#c9a35b",pat:"spaced",n:20})},
+  {n:"گوشواره «قطره‌ی فیروزه»",t:"گوشواره",p:520000,bg:"#d9ecea",svg:()=>earrings("#3fa3a0","drop")},
+  {n:"گردنبند «آفتاب»",t:"گردنبند",p:960000,left:2,bg:"#f3e6cf",svg:()=>necklace("#d9b98f","#a8742f")},
+  {n:"دستبند «جنگل»",t:"دستبند",p:690000,bg:"#e1e7d3",svg:()=>bracelet({a:"#6b8a4b",b:"#e8dcc6",pat:"alt",n:20})},
+  {n:"گوشواره حلقه‌ای «شب»",t:"گوشواره",p:610000,bg:"#dfe2ee",svg:()=>earrings("#2f4c8f","hoop")},
+  {n:"دستبند «شیر و عسل»",t:"دستبند",p:650000,bg:"#f5ecdc",svg:()=>bracelet({a:"#e8dcc6",b:"#a8742f",pat:"grad",n:20})},
+  {n:"گوشواره منگوله «کویر»",t:"گوشواره",p:480000,left:4,bg:"#f1dccb",svg:()=>earrings("#c2714f","tassel")},
+  {n:"گردنبند «لاجورد»",t:"گردنبند",p:1050000,bg:"#dde3f0",svg:()=>necklace("#e8dcc6","#2f4c8f")},
+  {n:"دستبند «صدف»",t:"دستبند",p:720000,bg:"#f6e2dc",svg:()=>bracelet({a:"#e7b3a6",b:"#ffffff",pat:"spaced",n:20,name:"MINA"})},
+  {n:"گوشواره «یشم»",t:"گوشواره",p:550000,bg:"#e2e9d8",svg:()=>earrings("#6b8a4b","drop")},
+  {n:"دستبند «اونیکس»",t:"دستبند",p:780000,bg:"#e6e1dc",svg:()=>bracelet({a:"#2a2522",b:"#c9a35b",pat:"spaced",n:20})},
+  {n:"گردنبند «گلبرگ»",t:"گردنبند",p:890000,bg:"#f6e0e0",svg:()=>necklace("#e7b3a6","#b5452e")}
+];
+const types = ["همه", ...new Set(ITEMS.map(i => i.t))]; let ty = "همه"; const liked = new Set();
+function renderShop(){
+  document.getElementById("tabs").innerHTML = types.map(t=>`<button class="tab ${t===ty?'on':''}" data-t="${t}">${t}</button>`).join("");
+  document.getElementById("mason").innerHTML = ITEMS.map((it,i)=>({it,i})).filter(({it})=>ty==="همه"||it.t===ty).map(({it,i})=>`
+    <article class="it-card" data-i="${i}">
+      ${it.left?`<span class="left">فقط ${fa(it.left)} عدد</span>`:""}
+      <button class="heart ${liked.has(i)?'on':''}" data-h="${i}" aria-label="علاقه‌مندی"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>
+      <div class="pic ph" style="aspect-ratio:${["4/5","1/1","4/5.4","4/4.4"][i%4]}"><img class="a" src="img/g${String(i*2+1).padStart(2,"0")}.jpg" alt="${it.n}" loading="lazy" decoding="async"><img class="b" src="img/g${String(i*2+2).padStart(2,"0")}.jpg" alt="" loading="lazy" decoding="async"><span class="swap">روی بدن ↺</span></div>
+      <div class="m" style="padding-top:16px"><div><h4 data-open="${i}">${it.n}</h4><small>${it.t} · دست‌ساز</small></div><div style="display:flex;align-items:center;gap:10px"><span class="p">${money(it.p)}</span><button class="add" data-open="${i}" aria-label="جزئیات و خرید">+</button></div></div>
+    </article>`).join("");
+}
+document.getElementById("tabs").onclick = e => { const t = e.target.closest(".tab"); if(t){ ty = t.dataset.t; renderShop(); } };
+document.getElementById("mason").onclick = e => {
+  const h = e.target.closest("[data-h]"); if(h){ const i = +h.dataset.h; liked.has(i) ? liked.delete(i) : liked.add(i); h.classList.toggle("on"); toast(liked.has(i) ? "به علاقه‌مندی‌ها اضافه شد ♥" : "از علاقه‌مندی‌ها حذف شد"); return; }
+  const o = e.target.closest("[data-open]"); if(o){ openP(+o.dataset.open); return; }
+  const p = e.target.closest(".pic"); if(p) p.closest(".it-card").classList.toggle("alt");
+};
+renderShop();
+
+/* product details per ITEMS index */
+const BR = {opts:["S · ۱۵ سانت","M · ۱۷ سانت","L · ۱۹ سانت"], label:"سایز مچ", fit:"دور مچتان را با متر خیاطی بگیرید و ۱ سانت اضافه کنید. گره کشویی تا ۳ سانت بازتر می‌شود."};
+const NK = {opts:["۴۰ سانت","۴۵ سانت","۵۰ سانت"], label:"طول گردنبند", fit:"۴۰ سانت: روی گودی گردن · ۴۵ سانت: کمی پایین‌تر · ۵۰ سانت: روی سینه"};
+const ER = {opts:["قلاب (گوش سوراخ)","گیره‌ای (بدون سوراخ)"], extra:[0,30000], label:"نوع بست", fit:"بست گیره‌ای برای گوش بدون سوراخ؛ ۳۰ هزار تومان بیشتر"};
+const INFO = [
+  {...BR, d:"عقیق سرخ طبیعی با مهره‌های فاصله‌انداز طلایی؛ رنگ گرم و پرانرژی برای هر روز.", spec:[["سنگ","عقیق سرخ (کارنلین) طبیعی، ۸ میلی‌متر"],["فاصله‌انداز","برنج با آب طلای ۱۸ عیار"],["نخ","کتان مومی قهوه‌ای"],["بست","گره کشویی قابل تنظیم"],["وزن","۱۴ گرم"]]},
+  {...ER, d:"فیروزه‌ی قطره‌ای روی قلاب طلایی؛ سبک و ظریف برای روز و شب.", spec:[["سنگ","فیروزه‌ی طبیعی صیقلی"],["طول","۴٫۵ سانت"],["فلز","نقره با آب طلا"],["وزن","۳ گرم هر لنگه"]]},
+  {...NK, d:"رشته‌ی چشم‌ببر عسلی با آویز قطره‌ای کهربایی در قاب طلایی.", spec:[["سنگ","چشم‌ببر ۴ میلی‌متر"],["آویز","کوارتز کهربایی تراش‌خورده، ۲ سانت"],["قاب","برنج با آب طلا"],["بست","قفل طلایی + زنجیر تنظیم ۵ سانتی"]]},
+  {...BR, d:"یشم سبز و سرامیک کرم، یکی‌درمیان؛ آرام و طبیعی.", spec:[["سنگ","یشم سبز طبیعی، ۸ میلی‌متر"],["مهره‌ی دوم","سرامیک لعاب مات، ساخت لالجین"],["نخ","کتان مومی"],["بست","گره کشویی"],["وزن","۱۲ گرم"]]},
+  {...ER, d:"حلقه‌های نازک طلایی با هفت مهره‌ی لاجورد؛ کلاسیک با رنگ عمیق شب.", spec:[["سنگ","لاجورد بدخشان، ۴ میلی‌متر"],["قطر حلقه","۳ سانت"],["فلز","نقره با آب طلا"],["وزن","۲٫۵ گرم هر لنگه"]]},
+  {...BR, d:"نیمی سرامیک کرم، نیمی چشم‌ببر عسلی؛ مثل اسمش، شیرین و گرم.", spec:[["سنگ","چشم‌ببر طبیعی، ۸ میلی‌متر"],["مهره‌ی دوم","سرامیک لعاب مات کرم"],["نخ","کتان مومی قهوه‌ای"],["بست","گره کشویی"],["وزن","۱۳ گرم"]]},
+  {...ER, d:"منگوله‌ی پنبه‌ای آجری با مهره‌ی سرامیکی؛ بلند و پرحرکت.", spec:[["منگوله","نخ پنبه‌ای، ۵ سانت"],["مهره","سرامیک لعابی آجری"],["طول کل","۸ سانت"],["فلز","برنج با آب طلا"],["وزن","۴ گرم هر لنگه"]]},
+  {...NK, d:"مهره‌های کرم با آویز لوزی لاجورد در قاب طلایی.", spec:[["مهره","سرامیک مات کرم، ۵ میلی‌متر"],["آویز","لاجورد بدخشان، ۱٫۸ سانت"],["قاب","برنج با آب طلا"],["بست","قفل طلایی + زنجیر تنظیم ۵ سانتی"]]},
+  {...BR, d:"صدف صورتی و مروارید آب شیرین با حروف دلخواه؛ این مدل با اسم MINA. اسم خودتان را می‌توانید در «دستبندت را بساز» بنویسید.", spec:[["سنگ","صدف صورتی + مروارید آب شیرین"],["حروف","مکعب‌های عاجی با حروف مشکی"],["نخ","کتان مومی کرم"],["بست","گره کشویی"],["وزن","۱۰ گرم"]]},
+  {...ER, d:"قطره‌ی یشم سبز صیقلی؛ ساده و ماندگار.", spec:[["سنگ","یشم سبز طبیعی"],["طول","۴٫۵ سانت"],["فلز","نقره با آب طلا"],["وزن","۳ گرم هر لنگه"]]},
+  {...BR, d:"اونیکس مشکی براق با فاصله‌انداز طلایی؛ مناسب آقایان و خانم‌ها.", spec:[["سنگ","اونیکس مشکی طبیعی، ۸ میلی‌متر"],["فاصله‌انداز","برنج با آب طلا"],["نخ","کتان مومی مشکی"],["بست","گره کشویی"],["وزن","۱۵ گرم"]]},
+  {...NK, d:"صدف صورتی با آویز لوزی عقیق سرخ؛ لطیف و زنانه.", spec:[["مهره","صدف صورتی، ۴ میلی‌متر"],["آویز","عقیق سرخ، ۱٫۸ سانت"],["قاب","برنج با آب طلا"],["بست","قفل طلایی + زنجیر تنظیم ۵ سانتی"]]}
+];
+const gimg = n => `img/g${String(n).padStart(2,"0")}.jpg`;
+
+/* cart: lines = {key, title, sub, price, q, thumb} */
+const cart = new Map();
+function addLine(line, quiet){
+  const cur = cart.get(line.key);
+  if(cur) cur.q = Math.min(9, cur.q + line.q); else cart.set(line.key, line);
+  renderCart(); if(!quiet) toast(`«${line.title}» به سبد اضافه شد ✓`);
+}
+function renderCart(){
+  let n = 0, tot = 0;
+  document.getElementById("citems").innerHTML = [...cart.values()].map(l => { n += l.q; tot += l.price*l.q;
+    return `<div class="ci"><div class="th">${l.thumb}</div>
+      <div><b style="font-size:14px">${l.title}</b><div class="meta2">${l.sub ? l.sub + " · " : ""}${money(l.price)}</div>
+        <div class="qty sm" style="margin-top:6px"><button data-inc="${l.key}" aria-label="زیاد">+</button><b>${fa(l.q)}</b><button data-dec="${l.key}" aria-label="کم">−</button></div></div>
+      <button class="rm" data-rm="${l.key}">حذف</button></div>`; }).join("") || `<p style="color:var(--mute);padding:30px 0;text-align:center">سبد خرید خالی است</p>`;
+  document.getElementById("bagN").textContent = fa(n);
+  document.getElementById("ctotal").textContent = money(tot);
+  const left = 1500000 - tot;
+  document.getElementById("shipTxt").textContent = tot === 0 ? "ارسال رایگان برای خرید بالای ۱٫۵ میلیون" : left > 0 ? `${money(left)} تا ارسال رایگان` : "ارسال شما رایگان شد ✓";
+  document.getElementById("shipBar").style.width = Math.min(100, tot/15000) + "%";
+}
+const ov = document.getElementById("ov"), cartEl = document.getElementById("cart");
+function openCart(){ ov.classList.add("on"); cartEl.classList.add("on"); }
+function closeCart(){ ov.classList.remove("on"); cartEl.classList.remove("on"); }
+document.getElementById("bagBtn").onclick = openCart; document.getElementById("cclose").onclick = closeCart; ov.onclick = closeCart;
+addEventListener("keydown", e => { if(e.key==="Escape"){ closeCart(); closeP(); } });
+document.getElementById("citems").onclick = e => {
+  const t = e.target.closest("[data-rm],[data-inc],[data-dec]"); if(!t) return;
+  const k = t.dataset.rm || t.dataset.inc || t.dataset.dec, l = cart.get(k);
+  if(t.dataset.rm) cart.delete(k);
+  else if(t.dataset.inc) l.q = Math.min(9, l.q+1);
+  else { l.q--; if(l.q < 1) cart.delete(k); }
+  renderCart();
+};
+renderCart();
+
+/* product modal */
+const pm = document.getElementById("pm"), pbox = document.getElementById("pbox");
+function openP(i){
+  const it = ITEMS[i], inf = INFO[i]; let opt = null, q = 1, gift = false, view = 1;
+  const extra = () => inf.extra && opt !== null ? inf.extra[opt] : 0;
+  pbox.innerHTML = `<button class="pclose" aria-label="بستن">×</button>
+    <div class="pgal"><img id="pmain" src="${gimg(i*2+1)}" alt="${it.n}">
+      <div class="thumbs"><button class="on" data-v="1"><img src="${gimg(i*2+1)}" alt="محصول"></button><button data-v="2"><img src="${gimg(i*2+2)}" alt="روی بدن"></button></div></div>
+    <div class="pbody">
+      <small style="color:var(--terra);font-weight:700">${it.t} · دست‌ساز${it.left ? ` · فقط ${fa(it.left)} عدد باقی مانده` : ""}</small>
+      <h3>${it.n}</h3>
+      <div class="pp" id="pprice">${money(it.p)}</div>
+      <p class="ds">${inf.d}</p>
+      <table class="spec">${inf.spec.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table>
+      <div class="lbl">${inf.label}</div>
+      <div class="opts2">${inf.opts.map((o,k) => `<button class="o2" data-o="${k}">${o}${inf.extra && inf.extra[k] ? ` <small>(+${fa(inf.extra[k]/1000)} هزار)</small>` : ""}</button>`).join("")}</div>
+      <div class="fit" id="fit">${inf.fit}</div>
+      <label class="giftc"><input type="checkbox" id="giftwrap"> بسته‌بندی کادویی با کارت دست‌نویس <small>(رایگان)</small></label>
+      <div class="pact"><div class="qty"><button data-q="1" aria-label="زیاد">+</button><b id="pq">۱</b><button data-q="-1" aria-label="کم">−</button></div>
+        <button class="btn t" id="padd">افزودن به سبد</button></div>
+      <div class="perks"><span>✓ ارسال ۳ تا ۵ روزه</span><span>✓ ضمانت اصالت سنگ</span><span>✓ ۷ روز مهلت بازگشت</span></div>
+    </div>`;
+  pm.classList.add("on");
+  const fit = pbox.querySelector("#fit"), main = pbox.querySelector("#pmain");
+  const upd = () => { pbox.querySelector("#pprice").textContent = money(it.p + extra()); };
+  pbox.querySelector(".thumbs").onclick = e => { const b = e.target.closest("[data-v]"); if(!b) return; view = +b.dataset.v; main.src = gimg(i*2+view); pbox.querySelectorAll(".thumbs button").forEach(x => x.classList.toggle("on", x===b)); };
+  main.onclick = () => pbox.querySelector(`.thumbs [data-v="${view===1?2:1}"]`).click();
+  pbox.querySelector(".opts2").onclick = e => { const b = e.target.closest(".o2"); if(!b) return; opt = +b.dataset.o; pbox.querySelectorAll(".o2").forEach(x => x.classList.toggle("on", x===b)); fit.style.color = ""; fit.textContent = inf.fit; upd(); };
+  pbox.querySelector(".qty").onclick = e => { const b = e.target.closest("[data-q]"); if(!b) return; q = Math.max(1, Math.min(9, q + +b.dataset.q)); pbox.querySelector("#pq").textContent = fa(q); };
+  pbox.querySelector("#giftwrap").onchange = e => gift = e.target.checked;
+  pbox.querySelector("#padd").onclick = () => {
+    if(opt === null){
+      fit.textContent = `لطفاً اول ${inf.label} را انتخاب کنید ↑`; fit.style.color = "var(--terra2)";
+      pbox.querySelectorAll(".o2").forEach(x => { x.classList.remove("err"); void x.offsetWidth; x.classList.add("err"); });
+      return;
+    }
+    const sub = inf.opts[opt] + (gift ? " · کادویی" : "");
+    addLine({key:`p${i}|${opt}|${gift?1:0}`, title:it.n, sub, price:it.p + extra(), q, thumb:`<img src="${gimg(i*2+1)}" alt="">`}, true);
+    closeP(); toast(`${fa(q)} عدد «${it.n.replace(/^.*«|».*$/g,"")}» به سبد اضافه شد ✓`); setTimeout(openCart, 350);
+  };
+  pbox.querySelector(".pclose").onclick = closeP;
+}
+function closeP(){ pm.classList.remove("on"); }
+pm.onclick = e => { if(e.target===pm) closeP(); };
+
+let tt; function toast(t){ const el = document.getElementById("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => el.classList.remove("on"), 2200); }
+
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.1});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
